@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RiS Dance Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════ SVG ICON DEFINITIONS (hidden) ═══════════════ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-13 6 0 0 3.5-1 6.5 1C10 13 8 16 8 16s1.5-3 3.5-4c2.5 2 2 6 2 6s2.5-4 1.5-9z"/></symbol>
+  <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 2c0 0-5 5-5 11a5 5 0 0010 0c0-3-1.5-5.5-3-7.5C13.5 7 13 8 13 9.5c0 1-.5 2-1 2 0-2-1-4-1-4s-1 2-1 3.5A3 3 0 009 14a3 3 0 006 0c0-4-3-12-3-12z"/></symbol>
+  <symbol id="icon-dumbbell" viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></symbol>
+  <symbol id="icon-swirl" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 18a8 8 0 010-16c2.76 0 5.19 1.4 6.63 3.53A6 6 0 1112 18z"/></symbol>
+  <symbol id="icon-lightning" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></symbol>
+  <symbol id="icon-muscle" viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></symbol>
+  <symbol id="icon-yoga" viewBox="0 0 24 24"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5 0-.8.1L6 8.3v4.7h2V9.6l1.8-.7z"/></symbol>
+  <symbol id="icon-stretch" viewBox="0 0 24 24"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM17 8h-5L9.5 3.5C9.2 3.2 8.8 3 8.5 3c-.8 0-1.5.7-1.5 1.5v8c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5V8l1.5 2H12l-2 9h2.3l1.2-4.5 1.5 1.5V20h2v-5l-1.5-1.5.8-3c.9 1.2 2.2 2 3.7 2.2V9.5C18.7 9.4 17.6 8.8 17 8z"/></symbol>
+  <symbol id="icon-location" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></symbol>
+  <symbol id="icon-email" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></symbol>
+  <symbol id="icon-instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></symbol>
+  <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></symbol>
+  <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></symbol>
+  <symbol id="icon-timer" viewBox="0 0 24 24"><path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A9 9 0 103 13a9 9 0 0016.03-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></symbol>
+  <symbol id="icon-fire" viewBox="0 0 24 24"><path d="M13.5 .67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></symbol>
+  <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></symbol>
+  <symbol id="icon-target" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></symbol>
+  <symbol id="icon-handshake" viewBox="0 0 24 24"><path d="M11 5h2v2h-2zm4 0h2v2h-2zm-8 0h2v2H7zm5.1 9.9L10 17l-3-3 1.5-1.5 1.6 1.6 3.5-3.5 1.5 1.5-3.5 3.8zm5.4-4.4c-.4-.4-1-.4-1.4 0l-3.5 3.5-1.6-1.6c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4l2.3 2.3c.4.4 1 .4 1.4 0l4.2-4.2c.4-.4.4-1 0-1.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></symbol>
+  <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></symbol>
+  <symbol id="icon-booty" viewBox="0 0 24 24"><path d="M12 2C8 2 5 5.5 5 9c0 2 .8 3.8 2 5v8h10v-8c1.2-1.2 2-3 2-5 0-3.5-3-7-7-7zm-1 14H9v-3h2v3zm4 0h-2v-3h2v3z"/></symbol>
+  <symbol id="icon-chevron-right" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></symbol>
+</svg>
+
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<nav id="main-nav">
+  <div class="nav-logo" onclick="showPage('home')">
+    <img src="assets/logo_.png" alt="RiS Dance Fitness" style="height:auto;width:250px;filter:invert(1);display:block;" />
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#" onclick="showPage('home')" data-page="home">Početna</a></li>
+    <li><a href="#" onclick="showPage('about')" data-page="about">O nama</a></li>
+    <li><a href="#" onclick="showPage('programs')" data-page="programs">Programi</a></li>
+    <li><a href="#" onclick="showPage('contact')" data-page="contact" class="nav-cta">Kontakt</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#" onclick="showPage('home');toggleMenu()">Početna</a>
+  <a href="#" onclick="showPage('about');toggleMenu()">O nama</a>
+  <a href="#" onclick="showPage('programs');toggleMenu()">Programi</a>
+  <a href="#" onclick="showPage('contact');toggleMenu()">Kontakt</a>
+</div>
+
+<!-- ═══════════════ PAGE: HOME ═══════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <img class="hero-bg-img" src="assets/2.png" alt="" />
+    <div class="hero-deco hero-deco-1"></div>
+    <div class="hero-deco hero-deco-2"></div>
+    <div class="hero-deco hero-deco-3"></div>
+    <div class="hero-stripe"></div>
+    <div class="hero-stripe"></div>
+    <div class="hero-stripe"></div>
+    <div class="hero-content">
+      <div style="margin-bottom:1.8rem;display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;">
+        <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--seafoam);border:1px solid var(--seafoam);padding:0.3rem 0.9rem;border-radius:20px;">Rijeka · Turkovo 35</span>
+      </div>
+      <h1 class="hero-title">
+        Pokreni se.<br>
+        <em>Osnaži se.</em>
+      </h1>
+      <p class="hero-sub">Rekrativan centar za žene koji nudi programe oblikovanja, snage i kondicije — tu si ti, tvoje tijelo, tvoja snaga.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary" onclick="showPage('programs')">Istraži programe ›</a>
+        <a href="#" class="btn-secondary" onclick="showPage('contact')">Pridruži nam se</a>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- ABOUT TEASER -->
+  <section class="about-teaser">
+    <div class="about-visual">
+      <div class="about-img-box">
+       <img src="assets/1.png" alt="RiS Dance Fitness">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;">
+          <span style="font-family:'Playfair Display',serif;font-size:1.5rem;color:rgba(255,255,255,0.7);font-style:italic;">Tvoja snaga, tvoja priča</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-text">
+      <span class="section-tag">O nama</span>
+      <div class="divider"></div>
+      <h2 class="section-title">Mjesto gdje se<br>žene osnažuju</h2>
+      <p class="section-sub">RiS Dance Fitness je rekreativan centar u srcu Rijeke, posvećen jedino i isključivo ženama. Nudimo raznovrsne programe prilagođene svim razinama fitnessa — od dinamičnih plesnih treninga do smirujućih body &amp; mind programa.</p>
+      <p class="section-sub" style="margin-top:1rem;">Naša misija je stvoriti prostor gdje se svaka žena osjeća dobrodošlo, snažno i motivirano.</p>
+      <a href="#" class="btn-primary" onclick="showPage('about')">Saznaj više o nama ›</a>
+    </div>
+  </section>
+
+  <!-- PROGRAMS PREVIEW -->
+  <section class="programs-preview">
+    <span class="section-tag light">Naši programi</span>
+    <div class="divider teal" style="margin-top:0.8rem;"></div>
+    <h2 class="section-title light">8 programa.<br><em style="font-style:italic;color:var(--peach);">Jedan cilj.</em></h2>
+    <div class="programs-grid">
+      <div class="prog-card" onclick="showPage('programs')">
+        <div class="prog-card-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><use href="#icon-dumbbell"/></svg></div>
+        <h3>Gym Class</h3>
+        <p>Klasičan grupni trening snage i kondicije u sportskom ozračju</p>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><use href="#icon-arrow-right"/></svg></span>
+      </div>
+      <div class="prog-card" onclick="showPage('programs')">
+        <div class="prog-card-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><use href="#icon-swirl"/></svg></div>
+        <h3>Combo</h3>
+        <p>Kombinacija cardio i snage za maksimalne rezultate</p>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><use href="#icon-arrow-right"/></svg></span>
+      </div>
+      <div class="prog-card" onclick="showPage('programs')">
+        <div class="prog-card-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><use href="#icon-fire"/></svg></div>
+        <h3>Burn Fat Fast</h3>
+        <p>Intenzivni trening za brzo sagorijevanje kalorija</p>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><use href="#icon-arrow-right"/></svg></span>
+      </div>
+      <div class="prog-card" onclick="showPage('programs')">
+        <div class="prog-card-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><use href="#icon-yoga"/></svg></div>
+        <h3>Jogalates</h3>
+        <p>Spoj joge i pilatesa za fleksibilnost i unutarnji mir</p>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><use href="#icon-arrow-right"/></svg></span>
+      </div>
+      <div class="prog-card" onclick="showPage('programs')">
+        <div class="prog-card-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><use href="#icon-lightning"/></svg></div>
+        <h3>Pilates Tabata</h3>
+        <p>Tabata intervalni trening kombiniran s pilates principima</p>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><use href="#icon-arrow-right"/></svg></span>
+      </div>
+      <div class="prog-card" onclick="showPage('programs')">
+        <div class="prog-card-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><use href="#icon-muscle"/></svg></div>
+        <h3>Total Body</h3>
+        <p>Kompletan trening cijelog tijela za sveukupno jačanje</p>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><use href="#icon-arrow-right"/></svg></span>
+      </div>
+      <div class="prog-card" onclick="showPage('programs')">
+        <div class="prog-card-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><use href="#icon-leaf"/></svg></div>
+        <h3>Mobility</h3>
+        <p>Poboljšaj pokretljivost i fleksibilnost, oslobodi se napetosti</p>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><use href="#icon-arrow-right"/></svg></span>
+      </div>
+      <div class="prog-card" onclick="showPage('programs')">
+        <div class="prog-card-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><use href="#icon-heart"/></svg></div>
+        <h3>Booty Pump</h3>
+        <p>Specijalizirani trening za stražnjicu i noge</p>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><use href="#icon-arrow-right"/></svg></span>
+      </div>
+    </div>
+    <div class="center-cta">
+      <a href="#schedule-section" class="btn-secondary" onclick="showPage('programs')">Pogledaj raspored
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="vertical-align:middle;margin-left:4px;"><use href="#icon-arrow-right"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <h2>Spremaš se za <br><em>novu verziju sebe?</em></h2>
+    <p>Pridruži se našoj zajednici snažnih žena u Rijeci i napravi prvi korak prema zdravijem životu.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="tel:0914513622" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="vertical-align:middle;margin-right:6px;"><use href="#icon-phone"/></svg>
+        091 451 3622
+      </a>
+      <a href="#" class="btn-secondary" onclick="showPage('contact')">Pošalji upit
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="vertical-align:middle;margin-left:4px;"><use href="#icon-arrow-right"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ═══════════════ PAGE: ABOUT ═══════════════ -->
+<div id="page-about" class="page">
+
+  <section class="about-hero">
+    <div style="padding:0 5vw;">
+      <span class="section-tag light">Naša priča</span>
+      <h1>O<em> nama</em></h1>
+      <p>Rekreativan centar za žene — gdje svaki trening postaje radost</p>
+    </div>
+  </section>
+
+  <section class="about-story">
+    <div class="story-sidebar">
+      <span class="story-label">Tko smo</span>
+      <h2>Snaga,<br>zajednica,<br><em>radost</em></h2>
+      <div class="divider"></div>
+      <div class="photo-collage">
+        <div class="collage-img collage-img-tall" style="position:relative;">
+          <img src="assets/3.png" alt="Trening">
+        </div>
+    </div>
+    
+    </div>
+    <div class="story-body">
+      <p>RiS Dance Fitness je nastao iz ljubavi prema kretanju i vjere da svaka žena zaslužuje prostor u kojemu može rasti, osnaživati se i osjećati se lijepo u vlastitoj koži.</p>
+      <p>Smješteni u mirnoj četvrti Turkovo u Rijeci, naš centar je od prvog dana bio zamišljen kao mnogo više od obične teretnice. To je zajednica, gdje dolazite ne samo trenirati, već i napuniti baterije i naći svoju snagu.</p>
+      <p>Nudimo pažljivo osmišljene programe koji obuhvaćaju sve aspekte fitnessa i wellnessa: programe oblikovanja tijela, snage i kondicije, ali i body &amp; mind programe koji brinu o unutarnjoj ravnoteži. Svaki program vodi iskusna trenerica koja je tu za vas da vas motivira, korigira i slavi svaki vaš napredak.</p>
+      <p>Kod nas nema osude ni natjecanja. Samo vi, vaše tijelo i vaši ciljevi u ugodnom prostoru koji je tu samo za vas.</p>
+      </div>
+  </section>
+
+  <!-- Team -->
+  <section class="team-section">
+    <span class="section-tag">Tim</span>
+    <div class="divider teal centered"></div>
+    <h2 class="section-title">Naše <em style="font-style:italic;color:var(--peach);">trenerice</em></h2>
+    <p class="section-sub">Stručne, strastvene i tu za svaku od vas, u svakom treningu i svakom koraku naprijed.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">
+          <img src="assets/4.png" alt="Darija">
+        </div>
+        <h3>Darija</h3>
+      </div>
+    
+      <div class="team-card">
+        <div class="team-avatar">
+          <img src="assets/5.png" alt="Ana">
+        </div>
+        <h3>Ana</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <h2>Posjeti <em>nas</em></h2>
+    <p>Pozivamo te na besplatni probni trening. Dođi, upoznaj nas i osjeti razliku!</p>
+    <a href="#" class="btn-primary" onclick="showPage('contact')">Rezerviraj probni trening ›</a>
+  </section>
+
+</div>
+
+<!-- ═══════════════ PAGE: PROGRAMI ═══════════════ -->
+<div id="page-programs" class="page">
+
+  <section class="programs-hero">
+    <div style="padding:0 5vw;position:relative;z-index:2;">
+      <span class="section-tag light">Što nudimo</span>
+      <h1>Naši <em>programi</em></h1>
+      <p>8 pažljivo osmišljenih programa za svaki cilj i svaku razinu</p>
+    </div>
+  </section>
+
+  <!-- ── ALTERNATING PROGRAM ROWS ── -->
+  <div class="programs-full">
+
+    <!-- 1 Gym Class — slika desno -->
+    <div class="program-alt-row">
+      <div class="program-text-side">
+        <span class="program-tag">Snaga &amp; Kondicija</span>
+        <h2>Gym Class</h2>
+        <p>Grupni trening u teretnici koji kombinira vježbe snage, stabilizacije i cardija. Uz dinamičnu glazbu i vodstvo instruktorice, svaki sat proleti kao tren. Prikladano za sve razine.</p>
+        <div class="program-meta">
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-timer"/></svg> 50 min
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-flame"/></svg> Srednji intenzitet
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-muscle"/></svg> Cijelo tijelo
+          </span>
+        </div>
+      </div>
+      <div class="program-img-side">
+        <div class="program-img-box pv-rust">
+          <img src="assets/6.png" alt="Gym Class">
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 Combo — slika lijevo -->
+    <div class="program-alt-row reverse">
+      <div class="program-text-side">
+        <span class="program-tag">Kombinacija</span>
+        <h2>Combo</h2>
+        <p>Savršena kombinacija kardiovaskularnih vježbi i treninga snage u jednom terminu. Combo program donosi brze vidljive rezultate i poboljšava opću kondiciju, idealan za one koji žele sve u jednom.</p>
+        <div class="program-meta">
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-timer"/></svg> 50 min
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-flame"/></svg> Visoki intenzitet
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-swirl"/></svg> Cardio + Snaga
+          </span>
+        </div>
+      </div>
+      <div class="program-img-side">
+        <div class="program-img-box pv-teal">
+          <img src="assets/7.png" alt="Combo">
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 BFF — slika desno -->
+    <div class="program-alt-row">
+      <div class="program-text-side">
+        <span class="program-tag">Mršavljenje</span>
+        <h2>Burn Fat Fast (BFF)</h2>
+        <p>Intenzivni trening dizajniran za maksimalno sagorijevanje kalorija u kratkom vremenu. Ovo je program koji daje brze rezultate. Idealan ako želiš ubrzati metabolizam i skinuti kilograme uz veliku dozu zabave.</p>
+        <div class="program-meta">
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-timer"/></svg> 50 min
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-flame"/></svg> Visoki intenzitet
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-lightning"/></svg> HIIT elementi
+          </span>
+        </div>
+      </div>
+      <div class="program-img-side">
+        <div class="program-img-box pv-mahog">
+          <img src="assets/8.png" alt="Burn Fat Fast">
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Jogalates — slika lijevo -->
+    <div class="program-alt-row reverse">
+      <div class="program-text-side">
+        <span class="program-tag">Body &amp; Mind</span>
+        <h2>Jogalates</h2>
+        <p>Harmonično spajanje joge i pilatesa u jedan program koji jača duboku muskulaturu, poboljšava fleksibilnost i smiruje um. Savršen za smanjenje stresa i vraćanje unutarnjeg mira nakon napornog dana.</p>
+        <div class="program-meta">
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-timer"/></svg> 50 min
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-leaf"/></svg> Niski intenzitet
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-yoga"/></svg> Fleksibilnost
+          </span>
+        </div>
+      </div>
+      <div class="program-img-side">
+        <div class="program-img-box pv-seafoam">
+          <img src="assets/9.png" alt="Jogalates">
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 Pilates Tabata — slika desno -->
+    <div class="program-alt-row">
+      <div class="program-text-side">
+        <span class="program-tag">Intenzivno</span>
+        <h2>Pilates Tabata</h2>
+        <p>Pilates Tabata spaja interval trening metodom Tabata s pilates principima stabilizacije. Rezultat? Trening koji podiže puls, jača jezgru tijela i topi masnoće istovremeno!</p>
+        <div class="program-meta">
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-timer"/></svg> 50 min
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-flame"/></svg> Visoki intenzitet
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-lightning"/></svg> Tabata protokol
+          </span>
+        </div>
+      </div>
+      <div class="program-img-side">
+        <div class="program-img-box pv-dark">
+          <img src="assets/3.png" alt="Pikates Tabata">
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 Total Body — slika lijevo -->
+    <div class="program-alt-row reverse">
+      <div class="program-text-side">
+        <span class="program-tag">Sveobuhvatno</span>
+        <h2>Total Body</h2>
+        <p>Kompletan trening koji se bavi svakim dijelom tijela, od ramena do potkoljenica. Total Body program uključuje vježbe za snagu, ravnotežu i koordinaciju, osiguravajući harmoničan razvoj cijelog tijela.</p>
+        <div class="program-meta">
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-timer"/></svg> 50 min
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-flame"/></svg> Srednji intenzitet
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-muscle"/></svg> Cijelo tijelo
+          </span>
+        </div>
+      </div>
+      <div class="program-img-side">
+        <div class="program-img-box pv-tan">
+          <img src="assets/11.png" alt="Total Body">
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 Mobility — slika desno -->
+    <div class="program-alt-row">
+      <div class="program-text-side">
+        <span class="program-tag">Body &amp; Mind</span>
+        <h2>Mobility</h2>
+        <p>Program fokusiran na poboljšanje pokretljivosti zglobova i fleksibilnosti mišića. Mobility je savršen kao standalone trening, ali i kao oporavak između intenzivnijih dana. Osjeti slobodu kretanja kakvu nisi dugo imala!</p>
+        <div class="program-meta">
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-timer"/></svg> 50 min
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-leaf"/></svg> Niski intenzitet
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-stretch"/></svg> Pokretljivost
+          </span>
+        </div>
+      </div>
+      <div class="program-img-side">
+        <div class="program-img-box pv-blend">
+          <img src="assets/10.png" alt="Mobility">
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 Booty Pump — slika lijevo -->
+    <div class="program-alt-row reverse">
+      <div class="program-text-side">
+        <span class="program-tag">Oblikovanje</span>
+        <h2>Booty Pump</h2>
+        <p>Specijalizirani trening za oblikovanje i jačanje stražnjice i nogu. Uz targeting vježbe i stalno progresivno opterećenje, Booty Pump donosi vidljive rezultate brže nego što misliš.</p>
+        <div class="program-meta">
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-timer"/></svg> 50 min
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-flame"/></svg> Srednji intenzitet
+          </span>
+          <span class="prog-meta-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-heart"/></svg> Glute fokus
+          </span>
+        </div>
+      </div>
+      <div class="program-img-side">
+        <div class="program-img-box pv-brown">
+          <img src="assets/12.png" alt="Booty Pump">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END programs-full -->
+
+  <!-- SCHEDULE -->
+  <section class="schedule-section">
+    <span class="section-tag light">Tjedni raspored</span>
+    <div class="divider teal" style="margin-top:0.8rem;"></div>
+    <h2 class="section-title light">Raspored <em style="font-style:italic;color:var(--peach);">treninga</em></h2>
+    <p class="schedule-note">📌 Raspored se može mijenjati — za aktualne termine kontaktirajte nas</p>
+
+    <div style="overflow-x:auto;">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Dan</th>
+            <th>Sat</th>
+            <th>Program</th>
+            <th>Trajanje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="day-header"><td colspan="5">Ponedjeljak</td></tr>
+          <tr>
+            <td></td>
+            <td>08:00</td>
+            <td><span class="class-pill cp-teal">Gym Class</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>09:00</td>
+            <td><span class="class-pill cp-rust">Combo</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>17:00</td>
+            <td><span class="class-pill cp-rust">Combo</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>18:00</td>
+            <td><span class="class-pill cp-sea">Burn Fat Fast (BFF)</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>18:00</td>
+            <td><span class="class-pill cp-san">Total Body</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>19:15</td>
+            <td><span class="class-pill cp-teal">Gym Class</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr class="day-header"><td colspan="5">Utorak</td></tr>
+          <tr>
+            <td></td>
+            <td>08:30</td>
+            <td><span class="class-pill cp-grn">Pilates Tabata</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>16:00</td>
+            <td><span class="class-pill cp-rust">Fit 60+ god.</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>17:00</td>
+            <td><span class="class-pill cp-tan">Mobility</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>18:00</td>
+            <td><span class="class-pill cp-grn">Pilates Tabata</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>19:15</td>
+            <td><span class="class-pill cp-teal">Gym Class</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr class="day-header"><td colspan="5">Srijeda</td></tr>
+          <tr>
+            <td></td>
+            <td>08:00</td>
+            <td><span class="class-pill cp-grn">Ladies Tabata</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>09:00</td>
+            <td><span class="class-pill cp-rust">Combo</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>17:00</td>
+            <td><span class="class-pill cp-rust">Combo</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>18:00</td>
+            <td><span class="class-pill cp-grn">Ladies Tabata</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>19:15</td>
+            <td><span class="class-pill cp-teal">Gym Class</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr class="day-header"><td colspan="5">Četvrtak</td></tr>
+          <tr>
+            <td></td>
+            <td>08:30</td>
+            <td><span class="class-pill cp-teal">Jogalates</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>17:00</td>
+            <td><span class="class-pill cp-rust">Mobility</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>18:00</td>
+            <td><span class="class-pill cp-tan">Jogalates</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>19:15</td>
+            <td><span class="class-pill cp-teal">Gym Class</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr class="day-header"><td colspan="5">Petak</td></tr>
+          <tr>
+            <td></td>
+            <td>08:00</td>
+            <td><span class="class-pill cp-san">Total Body</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>09:00</td>
+            <td><span class="class-pill cp-rust">Combo</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>16:00</td>
+            <td><span class="class-pill cp-tan">Fit 60+ god.</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>17:00</td>
+            <td><span class="class-pill cp-rust">Combo</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>18:00</td>
+            <td><span class="class-pill cp-sea">Burn Fat Fast (BFF)</span></td>
+            <td>50 min</td>
+          </tr>
+            <td></td>
+            <td>18:00</td>
+            <td><span class="class-pill cp-tan">Booty Pump</span></td>
+            <td>50 min</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>19:15</td>
+            <td><span class="class-pill cp-teal">Gym Class</span></td>
+            <td>50 min</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════ PAGE: CONTACT ═══════════════ -->
+<div id="page-contact" class="page">
+
+  <section class="contact-hero">
+    <div style="padding:0 5vw;position:relative;z-index:2;">
+      <span class="section-tag light">Javite nam se</span>
+      <h1>Kontaktirajte <em>nas</em></h1>
+      <p>Tu smo za svako pitanje, rezervaciju ili samo pozdrav
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style="vertical-align:middle;color:#f5c842;"></svg>
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-body">
+    <div class="contact-info">
+      <h2>Pronađite nas</h2>
+      <div class="divider"></div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><use href="#icon-location"/></svg>
+        </div>
+        <div>
+          <h4>Adresa</h4>
+          <p>Turkovo 35<br>Rijeka, 51000<br>Hrvatska</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><use href="#icon-phone"/></svg>
+        </div>
+        <div>
+          <h4>Telefon</h4>
+          <p><a href="tel:0914513622">091 451 3622</a></p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><use href="#icon-email"/></svg>
+        </div>
+        <div>
+          <h4>Email</h4>
+          <p><a href="mailto:katarina.tuhtan@gmail.com">ristudio25@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><use href="#icon-clock"/></svg>
+        </div>
+        <div>
+          <h4>Radno vrijeme</h4>
+          <table class="hours-table">
+            <tr><td>Ponedjeljak – Petak</td><td>08:00 – 20:30</td></tr>
+            <tr><td>Vikend</td><td>Zatvoreno</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon" style="background:var(--rust);">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><use href="#icon-instagram"/></svg>
+        </div>
+        <div>
+          <h4>Pratite nas</h4>
+          <p>
+            <a href="https://www.facebook.com/RiStudiofitnessByIvonaBrnelic" style="margin-right:0.5rem;display:inline-flex;align-items:center;gap:4px;">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><use href="#icon-facebook"/></svg> Facebook
+            </a>
+            <a href="https://www.instagram.com/ristudiofitness/" style="display:inline-flex;align-items:center;gap:4px;">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><use href="#icon-instagram"/></svg> Instagram
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h2>Pošaljite nam poruku</h2>
+      <p>Ispunite obrazac i odgovorit ćemo Vam u najkraćem mogućem roku.</p>
+
+      <form id="contact-form" action="https://formspree.io/f/mykvanvv" method="POST" onsubmit="handleFormSubmit(event)">
+        <input type="hidden" name="_subject" value="Novi upit - RiS Dance Fitness" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-name">Ime</label>
+            <input type="text" id="f-name" name="ime" placeholder="Vaše ime" required />
+          </div>
+          <div class="form-group">
+            <label for="f-surname">Prezime</label>
+            <input type="text" id="f-surname" name="prezime" placeholder="Vaše prezime" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="f-email">Email adresa</label>
+          <input type="email" id="f-email" name="email" placeholder="vas@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="f-phone">Broj telefona</label>
+          <input type="tel" id="f-phone" name="telefon" placeholder="091 xxx xxxx" />
+        </div>
+        <div class="form-group">
+          <label for="f-program">Zanima me program</label>
+          <select id="f-program" name="program">
+            <option value="">– Odaberite program –</option>
+            <option>Gym Class</option>
+            <option>Combo</option>
+            <option>Burn Fat Fast (BFF)</option>
+            <option>Jogalates</option>
+            <option>Pilates Tabata</option>
+            <option>Total Body</option>
+            <option>Mobility</option>
+            <option>Booty Pump</option>
+            <option>Više programa</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-msg">Poruka</label>
+          <textarea id="f-msg" name="poruka" placeholder="Napišite nam Vaše pitanje ili poruku..."></textarea>
+        </div>
+        <button type="submit" id="submit-btn" class="btn-primary" style="width:100%;justify-content:center;">
+          Pošalji poruku
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="vertical-align:middle;margin-left:6px;"><use href="#icon-email"/></svg>
+        </button>
+      </form>
+
+      <div class="form-success" id="form-success">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style="vertical-align:middle;margin-right:6px;color:#4caf50;"><use href="#icon-check"/></svg>
+        Hvala! Poruka je primljena. Javit ćemo Vam se uskoro!
+      </div>
+      <div class="form-error" id="form-error">
+        Ups, nešto je pošlo po krivu. Molimo pošaljite upit direktno na <a href="mailto:katarina.tuhtan@gmail.com">katarina.tuhtan@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="map-section">
+    <span class="section-tag light">Gdje smo</span>
+    <h2 class="section-title light" style="margin-top:0.5rem;">Pronađite <em style="font-style:italic;color:var(--peach);">nas</em></h2>
+    <div class="map-placeholder">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.0!2d14.45!3d45.33!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sTurkovo+35%2C+Rijeka!5e0!3m2!1shr!2shr!4v1000000000"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="RiS Dance Fitness lokacija"
+      ></iframe>
+      <div class="map-overlay"></div>
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.85rem;color:rgba(213,212,215,0.5);">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="vertical-align:middle;margin-right:4px;"><use href="#icon-pin"/></svg>
+      Turkovo 35, Rijeka 51000 · <a href="https://maps.google.com/?q=Turkovo+35+Rijeka" target="_blank" style="color:var(--peach);text-decoration:none;">Otvori u Google Mapsu
+        <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12" style="vertical-align:middle;"><use href="#icon-arrow-right"/></svg>
+      </a>
+    </p>
+  </section>
+
+</div>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="assets/logo_2.png" alt="RiS Dance Fitness" style="height:80px;width:auto;filter:invert(1);opacity:0.7;margin-bottom:1rem;display:block;" />
+      <p>Rekreativan centar za žene u Rijeci. Programi oblikovanja, snage, kondicije i body &amp; mind.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Stranice</h4>
+      <ul>
+        <li><a onclick="showPage('home')">Početna</a></li>
+        <li><a onclick="showPage('about')">O nama</a></li>
+        <li><a onclick="showPage('programs')">Programi</a></li>
+        <li><a onclick="showPage('contact')">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Programi</h4>
+      <ul>
+        <li><a onclick="showPage('programs')">Gym Class</a></li>
+        <li><a onclick="showPage('programs')">Combo</a></li>
+        <li><a onclick="showPage('programs')">Burn Fat Fast</a></li>
+        <li><a onclick="showPage('programs')">Jogalates</a></li>
+        <li><a onclick="showPage('programs')">Pilates Tabata</a></li>
+        <li><a onclick="showPage('programs')">Booty Pump</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <p>
+        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="vertical-align:middle;margin-right:4px;"><use href="#icon-pin"/></svg>
+        Turkovo 35, Rijeka
+      </p>
+      <p>
+        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="vertical-align:middle;margin-right:4px;"><use href="#icon-phone"/></svg>
+        091 451 3622
+      </p>
+      <p>
+        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="vertical-align:middle;margin-right:4px;"><use href="#icon-clock"/></svg>
+        Pon–Pet: 08:00–20:30
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 RiS Dance Fitness, Rijeka. Sva prava zadržana.</p>
+    <div class="social-links">
+      <a class="social-link" title="Facebook" href="https://www.facebook.com/RiStudiofitnessByIvonaBrnelic">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><use href="#icon-facebook"/></svg>
+      </a>
+      <a class="social-link" title="Instagram" href="https://www.instagram.com/ristudiofitness/">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><use href="#icon-instagram"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+      a.classList.toggle('active', a.dataset.page === name);
+    });
+    return false;
+  }
+
+  function toggleMenu() {
+    const m = document.getElementById('mobile-menu');
+    m.classList.toggle('open');
+  }
+
+  async function handleFormSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Slanje...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(e.target.action, {
+        method: 'POST',
+        body: new FormData(e.target),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('contact-form').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        throw new Error('server error');
+      }
+    } catch (err) {
+      document.getElementById('form-error').style.display = 'block';
+      btn.textContent = 'Pošalji poruku';
+      btn.disabled = false;
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('main-nav');
+    nav.style.boxShadow = window.scrollY > 30
+      ? '0 4px 30px rgba(0,0,0,0.3)'
+      : 'none';
+  });
+
+  showPage('home');
+</script>
+</body>
+</html>
