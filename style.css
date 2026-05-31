@@ -620,7 +620,6 @@ section { padding: 6rem 5vw; }
 @media (max-width: 768px) { .about-story { grid-template-columns: 1fr; } }
 
 .story-sidebar {
-  position: sticky;
   top: 100px;
 }
 
