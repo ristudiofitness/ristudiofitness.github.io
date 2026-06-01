@@ -892,14 +892,16 @@
                     <h4>Pratite nas</h4>
                     <p>
                         <a href="https://www.facebook.com/RiStudiofitnessByIvonaBrnelic"
-                           style="margin-right:0.5rem;display:inline-flex;align-items:center;gap:4px;">
+                           style="margin-right:0.5rem;display:inline-flex;align-items:center;gap:4px;"
+                           onclick="gtag('event', 'social_click', { platform: 'facebook' })">
                             <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
                                 <use href="#icon-facebook"/>
                             </svg>
                             Facebook
                         </a>
                         <a href="https://www.instagram.com/ristudiofitness/"
-                           style="display:inline-flex;align-items:center;gap:4px;">
+                           style="display:inline-flex;align-items:center;gap:4px;"
+                           onclick="gtag('event', 'social_click', { platform: 'instagram' })">
                             <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
                                 <use href="#icon-instagram"/>
                             </svg>
@@ -1064,12 +1066,14 @@
     <div class="footer-bottom">
         <p>© 2025 RiS Dance Fitness, Rijeka. Sva prava zadržana.</p>
         <div class="social-links">
-            <a class="social-link" title="Facebook" href="https://www.facebook.com/RiStudiofitnessByIvonaBrnelic">
+            <a class="social-link" title="Facebook" href="https://www.facebook.com/RiStudiofitnessByIvonaBrnelic"
+               onclick="gtag('event', 'social_click', { platform: 'facebook' })">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
                     <use href="#icon-facebook"/>
                 </svg>
             </a>
-            <a class="social-link" title="Instagram" href="https://www.instagram.com/ristudiofitness/">
+            <a class="social-link" title="Instagram" href="https://www.instagram.com/ristudiofitness/"
+               onclick="gtag('event', 'social_click', { platform: 'instagram' })">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
                     <use href="#icon-instagram"/>
                 </svg>
